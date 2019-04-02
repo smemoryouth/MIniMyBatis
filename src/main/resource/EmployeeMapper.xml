@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace是对应的接口文件包路径 -->
+<!--User这张表对应的映射文件  告诉MyBatis 一个接口方式实现什么SQL语句 -->
+<mapper namespace="com.tulun.employee.dao.EmployeeDao">
+    <select id="getAllEmployee" resultType="com.tulun.employee.bean.Employee">
+        select * from employee;
+    </select>
+
+    <select id="getEmployeeById" resultType="com.tulun.employee.bean.Employee">
+        select * from employee where id = ${id}
+    </select>
+    <select id="getEmployeeByName" resultType="com.tulun.employee.bean.Employee"/>
+
+
+    <delete id="deleteEmployeeById">
+        delete from employee where id = ${userid}
+    </delete>
+</mapper>
