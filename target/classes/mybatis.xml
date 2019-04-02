@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <settings>
+        <!--&lt;!&ndash; 延迟加载总开关 &ndash;&gt;-->
+        <!--<setting name="lazyLoadingEnabled" value="true"/>-->
+        <!--&lt;!&ndash; 侵入式延迟加载开关 &ndash;&gt;-->
+        <!--<setting name="aggressiveLazyLoading" value="false"/>-->
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="wl968640"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!-- 基于xml的实现方式 mybatis推荐这种方式 -->
+        <!--<mapper resource="Employee.xml"/>-->
+        <mapper class="com.tulun.employee.dao.EmployeeDao" />
+    </mappers>
+
+</configuration>
